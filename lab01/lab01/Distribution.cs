@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MathNet.Numerics;
 
 namespace lab01
@@ -13,9 +9,9 @@ namespace lab01
         {
             double d = b - a;
             double step = 1e-2;
-            double x = a - d / 3; // /2
+            double x = a - d / 3;
             
-            arrX = new double[(int)(5 * d / (3 * step)) + 1]; // [(int)(2 * d / step) + 1];
+            arrX = new double[(int)(5 * d / (3 * step)) + 1];
             arrf = new double[(int)(5 * d / (3 * step)) + 1];
             arrF = new double[(int)(5 * d / (3 * step)) + 1];
 
@@ -45,7 +41,7 @@ namespace lab01
 
         public static void Normal(double mu, double sigma, out double[] arrX, out double[] arrf, out double[] arrF)
         {
-            double a = -35, b = 35;//double a = mu - 5, b = mu + 5;
+            double a = -35, b = 35;
             double step = 1e-2;
             double x = a;
 
