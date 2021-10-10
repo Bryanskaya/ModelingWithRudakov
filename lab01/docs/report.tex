@@ -1,0 +1,30 @@
+\documentclass[12pt, a4paper]{article}
+\include{format.inc}
+
+% Чтобы вместо : в подписях было -
+\RequirePackage{caption}
+\DeclareCaptionLabelSeparator{defffis}{ — }
+\captionsetup{justification=centering,labelsep=defffis}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.9}
+
+\begin{document}
+	\includepdf[pages=1]{title.pdf}
+	
+	%\tableofcontents
+	%\newpage
+	
+	\section{Задание}
+	\input{task.tex}
+	\newpage
+	
+	\section{Результаты выполнения работы}
+	\input{results.tex}
+	\newpage
+	
+	\section{Код программы}
+	\input{code.tex}
+	
+\end{document}
