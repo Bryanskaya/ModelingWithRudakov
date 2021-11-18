@@ -6,7 +6,7 @@ class Distribution
 	public static void Equal(double a, double b, out double[] arrX, out double[] arrf, out double[] arrF)
 	{
 		double d = b - a;
-		double step = 1e-2;
+		double step = d / 500;
 		double x = a - d / 3;
 		
 		arrX = new double[(int)(5 * d / (3 * step)) + 1];
