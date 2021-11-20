@@ -1,0 +1,95 @@
+На Листинге \ref{code} представлены основные методы.
+
+\begin{lstlisting}[label=code, caption = Основные методы]
+namespace calculations {
+	class MathCalc {
+		public static double Criteria(int[] arr, int elMin, int elMax) {
+			double y = 0, p = 1.0 / (elMax - elMin);
+			
+			for (int i = elMin; i < elMax; i++)
+				y += Math.Pow(arr.Count(x => x == i), 2) / p;
+			y = y / (double)arr.Length - arr.Length;
+			return ChiSquared.CDF(elMax - elMin - 1, y);
+		}
+	}
+
+	class CongruentMethod {
+		private int a { get; }
+		private int b { get; }
+		private int N { get; }
+		private int r;
+		
+		public CongruentMethod(int seed) {	
+			a = 1103515245;
+			b = 12345;
+			r = seed;
+		}
+		
+		public int next(int start, int end){
+			r = a * r + b;
+			return (int)((uint)r >> 16) % (end - start) + start;
+		}
+	}
+}
+
+namespace lab03 {
+	public partial class Form1 : Form {
+		...
+		private void _fillAlg(int start, int end, string filename, string field, string fieldK){
+			int[] arr = new int[1000];
+			CongruentMethod alg = new CongruentMethod(rnd.Next());
+			
+			for (int i = 0; i < arr.Length; i++)
+				arr[i] = alg.next(start, end);
+			...
+			fillCriteria(fieldK, MathCalc.Criteria(arr, start, end));
+		}
+		
+		private void _useTable(int start, int end, string filename, string field, string fieldK){
+			int[] data = new int[1000], arr = new int[1000];
+			int num = rnd.Next(0, 1000), j = num;
+			
+			_getArrFromFile(filename, ref data);
+			
+			for (int i = 0; i < arr.Length; i++) {
+				arr[i] = data[j];
+				j = (j + 1) % data.Length;
+			}
+			fillCriteria(fieldK, MathCalc.Criteria(arr, start, end));
+		}
+	
+		private void processUser(){
+			int[] arr = new int[10];
+			int flag, start, end;
+			string fieldK;
+			
+			try{
+				_getArrFromUser(out flag, ref arr);
+			}
+			catch (Exception e){
+				...
+			}
+			
+			switch (flag){
+				case 1:
+					start = 0;
+					end = 10;
+					fieldK = "criteriaO1";
+					break;
+				case 2:
+					start = 10;
+					end = 100;
+					fieldK = "criteriaO2";
+					break;
+				default:
+					start = 100;
+					end = 1000;
+					fieldK = "criteriaO3";
+					break;
+			}
+			fillCriteria(fieldK, MathCalc.Criteria(arr, start, end));
+		}
+	}
+}
+
+\end{lstlisting}

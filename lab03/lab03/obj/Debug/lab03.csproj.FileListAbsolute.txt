@@ -8,3 +8,6 @@ C:\msys64\home\bryan\ModelingWithRudakov\lab03\lab03\obj\Debug\lab03.csproj.Gene
 C:\msys64\home\bryan\ModelingWithRudakov\lab03\lab03\obj\Debug\lab03.csproj.CoreCompileInputs.cache
 C:\msys64\home\bryan\ModelingWithRudakov\lab03\lab03\obj\Debug\lab03.exe
 C:\msys64\home\bryan\ModelingWithRudakov\lab03\lab03\obj\Debug\lab03.pdb
+C:\msys64\home\bryan\ModelingWithRudakov\lab03\lab03\bin\Debug\MathNet.Numerics.dll
+C:\msys64\home\bryan\ModelingWithRudakov\lab03\lab03\bin\Debug\MathNet.Numerics.xml
+C:\msys64\home\bryan\ModelingWithRudakov\lab03\lab03\obj\Debug\lab03.csproj.CopyComplete

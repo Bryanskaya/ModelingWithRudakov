@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace randMethods
 {
     /// <summary>
@@ -18,16 +19,21 @@ namespace randMethods
 
         public CongruentMethod(int seed)
         {
-            a = 430;
+            /*a = 430;
             b = 2531;
-            N = 11979;
+            N = 11979;*/
+
+            a = 1103515245;
+            b = 12345;
+
             r = seed;
         }
 
         public int next(int start, int end)
         {
-            r = (a * r + b) % N;
-            return Math.Abs(r) % (end - start) + start;
+            r = a * r + b;
+            //return Math.Abs(r) % (end - start) + start;
+            return (int)((uint)r >> 16) % (end - start) + start;
         }
 
     }

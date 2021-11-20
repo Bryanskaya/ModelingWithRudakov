@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Collections;
+﻿using System.IO;
 
 namespace rw
 {
@@ -16,7 +14,7 @@ namespace rw
     {
         public static void read(string filename, out string[] arr)
         {
-            arr = File.ReadAllLines(filename)[0].Split(' ');
+            arr = File.ReadAllLines(filename);
         }
     }
 

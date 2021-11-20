@@ -44,14 +44,14 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.criteriaA1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox9 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox10 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox11 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox12 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox13 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox14 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox15 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox16 = new System.Windows.Forms.RichTextBox();
+            this.criteriaA2 = new System.Windows.Forms.RichTextBox();
+            this.criteriaA3 = new System.Windows.Forms.RichTextBox();
+            this.criteriaT3 = new System.Windows.Forms.RichTextBox();
+            this.criteriaT2 = new System.Windows.Forms.RichTextBox();
+            this.criteriaT1 = new System.Windows.Forms.RichTextBox();
+            this.criteriaO3 = new System.Windows.Forms.RichTextBox();
+            this.criteriaO2 = new System.Windows.Forms.RichTextBox();
+            this.criteriaO1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox17 = new System.Windows.Forms.RichTextBox();
             this.own3 = new System.Windows.Forms.RichTextBox();
             this.own2 = new System.Windows.Forms.RichTextBox();
@@ -216,85 +216,85 @@
             this.criteriaA1.TabIndex = 19;
             this.criteriaA1.Text = "";
             // 
-            // richTextBox9
+            // criteriaA2
             // 
-            this.richTextBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox9.Location = new System.Drawing.Point(191, 418);
-            this.richTextBox9.Name = "richTextBox9";
-            this.richTextBox9.ReadOnly = true;
-            this.richTextBox9.Size = new System.Drawing.Size(97, 27);
-            this.richTextBox9.TabIndex = 20;
-            this.richTextBox9.Text = "";
+            this.criteriaA2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.criteriaA2.Location = new System.Drawing.Point(191, 418);
+            this.criteriaA2.Name = "criteriaA2";
+            this.criteriaA2.ReadOnly = true;
+            this.criteriaA2.Size = new System.Drawing.Size(97, 27);
+            this.criteriaA2.TabIndex = 20;
+            this.criteriaA2.Text = "";
             // 
-            // richTextBox10
+            // criteriaA3
             // 
-            this.richTextBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox10.Location = new System.Drawing.Point(294, 418);
-            this.richTextBox10.Name = "richTextBox10";
-            this.richTextBox10.ReadOnly = true;
-            this.richTextBox10.Size = new System.Drawing.Size(97, 27);
-            this.richTextBox10.TabIndex = 21;
-            this.richTextBox10.Text = "";
+            this.criteriaA3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.criteriaA3.Location = new System.Drawing.Point(294, 418);
+            this.criteriaA3.Name = "criteriaA3";
+            this.criteriaA3.ReadOnly = true;
+            this.criteriaA3.Size = new System.Drawing.Size(97, 27);
+            this.criteriaA3.TabIndex = 21;
+            this.criteriaA3.Text = "";
             // 
-            // richTextBox11
+            // criteriaT3
             // 
-            this.richTextBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox11.Location = new System.Drawing.Point(629, 418);
-            this.richTextBox11.Name = "richTextBox11";
-            this.richTextBox11.ReadOnly = true;
-            this.richTextBox11.Size = new System.Drawing.Size(97, 27);
-            this.richTextBox11.TabIndex = 24;
-            this.richTextBox11.Text = "";
+            this.criteriaT3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.criteriaT3.Location = new System.Drawing.Point(629, 418);
+            this.criteriaT3.Name = "criteriaT3";
+            this.criteriaT3.ReadOnly = true;
+            this.criteriaT3.Size = new System.Drawing.Size(97, 27);
+            this.criteriaT3.TabIndex = 24;
+            this.criteriaT3.Text = "";
             // 
-            // richTextBox12
+            // criteriaT2
             // 
-            this.richTextBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox12.Location = new System.Drawing.Point(526, 418);
-            this.richTextBox12.Name = "richTextBox12";
-            this.richTextBox12.ReadOnly = true;
-            this.richTextBox12.Size = new System.Drawing.Size(97, 27);
-            this.richTextBox12.TabIndex = 23;
-            this.richTextBox12.Text = "";
+            this.criteriaT2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.criteriaT2.Location = new System.Drawing.Point(526, 418);
+            this.criteriaT2.Name = "criteriaT2";
+            this.criteriaT2.ReadOnly = true;
+            this.criteriaT2.Size = new System.Drawing.Size(97, 27);
+            this.criteriaT2.TabIndex = 23;
+            this.criteriaT2.Text = "";
             // 
-            // richTextBox13
+            // criteriaT1
             // 
-            this.richTextBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox13.Location = new System.Drawing.Point(423, 418);
-            this.richTextBox13.Name = "richTextBox13";
-            this.richTextBox13.ReadOnly = true;
-            this.richTextBox13.Size = new System.Drawing.Size(97, 27);
-            this.richTextBox13.TabIndex = 22;
-            this.richTextBox13.Text = "";
+            this.criteriaT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.criteriaT1.Location = new System.Drawing.Point(423, 418);
+            this.criteriaT1.Name = "criteriaT1";
+            this.criteriaT1.ReadOnly = true;
+            this.criteriaT1.Size = new System.Drawing.Size(97, 27);
+            this.criteriaT1.TabIndex = 22;
+            this.criteriaT1.Text = "";
             // 
-            // richTextBox14
+            // criteriaO3
             // 
-            this.richTextBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox14.Location = new System.Drawing.Point(962, 418);
-            this.richTextBox14.Name = "richTextBox14";
-            this.richTextBox14.ReadOnly = true;
-            this.richTextBox14.Size = new System.Drawing.Size(97, 27);
-            this.richTextBox14.TabIndex = 34;
-            this.richTextBox14.Text = "";
+            this.criteriaO3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.criteriaO3.Location = new System.Drawing.Point(962, 418);
+            this.criteriaO3.Name = "criteriaO3";
+            this.criteriaO3.ReadOnly = true;
+            this.criteriaO3.Size = new System.Drawing.Size(97, 27);
+            this.criteriaO3.TabIndex = 34;
+            this.criteriaO3.Text = "";
             // 
-            // richTextBox15
+            // criteriaO2
             // 
-            this.richTextBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox15.Location = new System.Drawing.Point(859, 418);
-            this.richTextBox15.Name = "richTextBox15";
-            this.richTextBox15.ReadOnly = true;
-            this.richTextBox15.Size = new System.Drawing.Size(97, 27);
-            this.richTextBox15.TabIndex = 33;
-            this.richTextBox15.Text = "";
+            this.criteriaO2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.criteriaO2.Location = new System.Drawing.Point(859, 418);
+            this.criteriaO2.Name = "criteriaO2";
+            this.criteriaO2.ReadOnly = true;
+            this.criteriaO2.Size = new System.Drawing.Size(97, 27);
+            this.criteriaO2.TabIndex = 33;
+            this.criteriaO2.Text = "";
             // 
-            // richTextBox16
+            // criteriaO1
             // 
-            this.richTextBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox16.Location = new System.Drawing.Point(756, 418);
-            this.richTextBox16.Name = "richTextBox16";
-            this.richTextBox16.ReadOnly = true;
-            this.richTextBox16.Size = new System.Drawing.Size(97, 27);
-            this.richTextBox16.TabIndex = 32;
-            this.richTextBox16.Text = "";
+            this.criteriaO1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.criteriaO1.Location = new System.Drawing.Point(756, 418);
+            this.criteriaO1.Name = "criteriaO1";
+            this.criteriaO1.ReadOnly = true;
+            this.criteriaO1.Size = new System.Drawing.Size(97, 27);
+            this.criteriaO1.TabIndex = 32;
+            this.criteriaO1.Text = "";
             // 
             // richTextBox17
             // 
@@ -415,18 +415,18 @@
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.richTextBox14);
-            this.Controls.Add(this.richTextBox15);
-            this.Controls.Add(this.richTextBox16);
+            this.Controls.Add(this.criteriaO3);
+            this.Controls.Add(this.criteriaO2);
+            this.Controls.Add(this.criteriaO1);
             this.Controls.Add(this.richTextBox17);
             this.Controls.Add(this.own3);
             this.Controls.Add(this.own2);
             this.Controls.Add(this.own1);
-            this.Controls.Add(this.richTextBox11);
-            this.Controls.Add(this.richTextBox12);
-            this.Controls.Add(this.richTextBox13);
-            this.Controls.Add(this.richTextBox10);
-            this.Controls.Add(this.richTextBox9);
+            this.Controls.Add(this.criteriaT3);
+            this.Controls.Add(this.criteriaT2);
+            this.Controls.Add(this.criteriaT1);
+            this.Controls.Add(this.criteriaA3);
+            this.Controls.Add(this.criteriaA2);
             this.Controls.Add(this.criteriaA1);
             this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.richTextBox1);
@@ -468,14 +468,14 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.RichTextBox richTextBox4;
         private System.Windows.Forms.RichTextBox criteriaA1;
-        private System.Windows.Forms.RichTextBox richTextBox9;
-        private System.Windows.Forms.RichTextBox richTextBox10;
-        private System.Windows.Forms.RichTextBox richTextBox11;
-        private System.Windows.Forms.RichTextBox richTextBox12;
-        private System.Windows.Forms.RichTextBox richTextBox13;
-        private System.Windows.Forms.RichTextBox richTextBox14;
-        private System.Windows.Forms.RichTextBox richTextBox15;
-        private System.Windows.Forms.RichTextBox richTextBox16;
+        private System.Windows.Forms.RichTextBox criteriaA2;
+        private System.Windows.Forms.RichTextBox criteriaA3;
+        private System.Windows.Forms.RichTextBox criteriaT3;
+        private System.Windows.Forms.RichTextBox criteriaT2;
+        private System.Windows.Forms.RichTextBox criteriaT1;
+        private System.Windows.Forms.RichTextBox criteriaO3;
+        private System.Windows.Forms.RichTextBox criteriaO2;
+        private System.Windows.Forms.RichTextBox criteriaO1;
         private System.Windows.Forms.RichTextBox richTextBox17;
         private System.Windows.Forms.RichTextBox own3;
         private System.Windows.Forms.RichTextBox own2;
