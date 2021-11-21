@@ -1,0 +1,50 @@
+Интерфейс предполагает ввод всех необходимых параметров модели. Моделирование происходит до тех пор, пока не будет обработано 10\,000 сообщений. В случае, если длина очереди превышает 10\% от этого числа, считается, что дальше она будет только расти, поэтому принимается, что определить искомую длину очереди нельзя.
+
+Также предоставляется возможность построения обратной связи, указывается необходимый процент.
+
+На рисунках \ref{fig1:image} -- \ref{fig5:image} демонстрируются результаты работы.
+
+\begin{figure}[h]
+	\begin{center}
+		{\includegraphics[scale = 0.7]{img/ex1.png}}
+		\caption{Пример 1. Генератор и обслуживающий автомат работают с примерно одинаковой производительностью}
+		\label{fig1:image}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{center}
+		{\includegraphics[scale = 0.7]{img/ex2.png}}
+		\caption{Пример 2. Генератор создает сообщения интенсивнее, чем их обрабатывает автомат (при таких параметрах возникает переполнение)}
+		\label{fig2:image}
+	\end{center}
+\end{figure}
+\newpage
+
+\begin{figure}[h!]
+	\begin{center}
+		{\includegraphics[scale = 0.7]{img/ex3.png}}
+		\caption{Пример 3. Автомат обрабатывает сообщения интенсивнее, чем их создаёт генератор}
+		\label{fig3:image}
+	\end{center}
+\end{figure}
+\newpage
+
+\begin{figure}[h]
+	\begin{center}
+		{\includegraphics[scale = 0.7]{img/ex4.png}}
+		\caption{Пример 4. Параметры такие же, как в примере 3, но есть обратная связь -- 20\%}
+		\label{fig4:image}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+		{\includegraphics[scale = 0.7]{img/ex5.png}}
+		\caption{Пример 5. Генератор и обслуживающий автомат работают с примерно одинаковой производительностью, но есть обратная связь -- 10\%}
+		\label{fig5:image}
+	\end{center}
+\end{figure}
+
+\newpage
+

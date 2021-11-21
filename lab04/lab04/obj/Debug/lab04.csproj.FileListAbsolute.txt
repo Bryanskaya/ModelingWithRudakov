@@ -1,0 +1,13 @@
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\bin\Debug\lab04.exe.config
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\bin\Debug\lab04.exe
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\bin\Debug\lab04.pdb
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\obj\Debug\lab04.csprojAssemblyReference.cache
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\obj\Debug\lab04.Form1.resources
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\obj\Debug\lab04.Properties.Resources.resources
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\obj\Debug\lab04.csproj.GenerateResource.cache
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\obj\Debug\lab04.csproj.CoreCompileInputs.cache
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\obj\Debug\lab04.exe
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\obj\Debug\lab04.pdb
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\bin\Debug\MathNet.Numerics.dll
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\bin\Debug\MathNet.Numerics.xml
+C:\msys64\home\bryan\ModelingWithRudakov\lab04\lab04\obj\Debug\lab04.csproj.CopyComplete
