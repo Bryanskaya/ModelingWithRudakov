@@ -133,5 +133,7 @@ dmypy.json
 *.doc
 *.toc
 *.log
+*.out
+*.nlo
 *.synctex
 *.synctex.gz
