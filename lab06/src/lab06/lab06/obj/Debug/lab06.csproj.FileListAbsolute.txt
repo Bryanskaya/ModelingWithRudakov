@@ -1,0 +1,7 @@
+C:\msys64\home\bryan\ModelingWithRudakov\lab06\src\lab06\lab06\bin\Debug\lab06.exe.config
+C:\msys64\home\bryan\ModelingWithRudakov\lab06\src\lab06\lab06\bin\Debug\lab06.exe
+C:\msys64\home\bryan\ModelingWithRudakov\lab06\src\lab06\lab06\bin\Debug\lab06.pdb
+C:\msys64\home\bryan\ModelingWithRudakov\lab06\src\lab06\lab06\obj\Debug\lab06.csprojAssemblyReference.cache
+C:\msys64\home\bryan\ModelingWithRudakov\lab06\src\lab06\lab06\obj\Debug\lab06.csproj.CoreCompileInputs.cache
+C:\msys64\home\bryan\ModelingWithRudakov\lab06\src\lab06\lab06\obj\Debug\lab06.exe
+C:\msys64\home\bryan\ModelingWithRudakov\lab06\src\lab06\lab06\obj\Debug\lab06.pdb

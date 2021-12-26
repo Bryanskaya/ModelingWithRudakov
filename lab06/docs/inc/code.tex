@@ -1,0 +1,355 @@
+На Листинге \ref{code} представлены основные методы.
+
+\begin{lstlisting}[label=code, caption = Основные методы]
+namespace lab06
+{
+	public enum EventType
+	{
+		IsClient1,
+		IsClient2,
+		IsOperator,
+		IsNurse,
+		IsDoctor
+	}
+	
+	class Event
+	{
+		public EventType etype;
+		public double etime;
+		public int ind;
+		
+		public Event(EventType type, double time, int index = 0)
+		{
+			etype = type;
+			etime = time;
+			ind = index;
+		}
+	}
+
+	class Generator
+	{
+		private double _a;
+		private double _b;
+		private static Random rnd = new Random();
+		
+		public Generator(double m, double d)
+		{
+			_a = m - d;
+			_b = m + d;
+		}
+		
+		public double ProcessTime(){ return _a + (_b - _a) * rnd.NextDouble(); }
+	}
+
+	public enum EventType
+	{
+		IsClient1,
+		IsClient2,
+		IsOperator,
+		IsNurse,
+		IsDoctor
+	}
+	
+	class Event
+	{
+		public EventType etype;
+		public double etime;
+		public int ind;
+		
+		public Event(EventType type, double time, int index = 0)
+		{
+			etype = type;
+			etime = time;
+			ind = index;
+		}
+	}
+	
+	class Obj : Generator
+	{
+		public bool _isFree;
+		public double next;
+		
+		public Obj(double a, double b) : base(a, b)
+		{
+			SetFree();
+			next = 0;
+		}
+		
+		public double Next(double cur_time = 0)
+		{
+			next = cur_time + ProcessTime();
+			return next;
+		}
+		
+		public bool IsFree() { return _isFree; }
+		public void SetFree() { _isFree = true; }
+		public void SetBusy() { _isFree = false; }
+		public virtual void AddToQueue(double elem) { throw new Exception(); }
+		public virtual double GetFromQueue() { throw new Exception(); }
+	}
+	
+	class Operator : Obj
+	{
+		private Queue<double> _inQ;
+		private Queue<double> _outQ;
+		
+		public Operator(double a, double b, ref Queue<double> inQ, ref Queue<double> outQ) : base(a, b)
+		{
+			_inQ = inQ;
+			_outQ = outQ;
+		}
+		
+		public override void AddToQueue(double elem) { _outQ.Enqueue(elem); }
+		
+		public override double GetFromQueue()
+		{
+			if (_inQ.Count != 0)
+			return _inQ.Dequeue();
+			return -1;
+		}
+	}
+
+	class Client : Obj
+	{
+		private Queue<double> _q;
+		
+		public Client(double a, double b, ref Queue<double> q) : base(a, b) { _q = q; }
+		
+		public override void AddToQueue(double elem) { _q.Enqueue(elem); }
+	}
+
+	class Nurse : Operator
+	{
+		public Nurse(double a, double b, ref Queue<double> inQ, ref Queue<double> outQ) : base(a, b, ref inQ, ref outQ) {}
+	}
+
+	class Doctor : Obj
+	{
+		private Queue<double> _inQ;
+		
+		public Doctor(double a, double b, ref Queue<double> inQ) : base(a, b) {	_inQ = inQ; }
+		
+		public override double GetFromQueue()
+		{
+			if (_inQ.Count != 0)
+			return _inQ.Dequeue();
+			return -1;
+		}
+	}
+
+	class Model
+	{
+		public Queue<double>[] qArr;
+		public Client[] clientArr;
+		public Nurse[] nrsArr;
+		public Doctor[] dctArr;
+		public int[] maxSizeQ;
+		
+		public Operator opr;
+		
+		List<Event> eventArr;
+		
+		public int processed;
+		public int refused;
+		public double simTime;
+		public double pRefuse;
+		
+		private static int _limit;
+		private static int _maxQueue;
+		
+		public Model(int limit)
+		{
+			processed = 0;
+			refused = 0;
+			_limit = limit;
+			_maxQueue = 7;
+			
+			eventArr = new List<Event>();
+			
+			qArr = new Queue<double>[]
+			{
+				new Queue<double>(),
+				new Queue<double>(),
+				new Queue<double>(),
+				new Queue<double>()
+			};
+			
+			clientArr = new Client[2]
+			{
+				new Client(5, 2, ref qArr[0]),
+				new Client(6, 2, ref qArr[1])
+			};
+			
+			opr = new Operator(5.5, 3, ref qArr[0], ref qArr[2]);
+			
+			nrsArr = new Nurse[3]
+			{
+				new Nurse(8, 2, ref qArr[2], ref qArr[3]),
+				new Nurse(12, 4, ref qArr[2], ref qArr[3]),
+				new Nurse(5, 2, ref qArr[1], ref qArr[3])
+			};
+			
+			dctArr = new Doctor[2]
+			{
+				new Doctor(7, 2, ref qArr[3]),
+				new Doctor(5, 1, ref qArr[3])
+			};
+			
+			maxSizeQ = new int[4] { 0, 0, 0, 0 };
+		}
+		
+		public void Imitation()
+		{
+			Event curEvent;
+			
+			eventArr.Add(new Event(EventType.IsClient1, clientArr[0].Next(), 0));
+			eventArr.Add(new Event(EventType.IsClient2, clientArr[1].Next(), 1));
+			
+			while (eventArr.Count > 0)
+			{
+				eventArr.Sort((Event x, Event y) =>
+					x.etime > y.etime
+					? 1 : -1);
+				
+				if (processed + refused >= _limit)
+					break;
+				
+				curEvent = eventArr[0];
+				eventArr.RemoveAt(0);
+				
+				switch (curEvent.etype)
+				{
+					case EventType.IsClient1:
+					case EventType.IsClient2:
+					ProcessClient(curEvent);
+					break;
+					
+					case EventType.IsOperator:
+					ProcessOperator(curEvent);
+					break;
+					
+					case EventType.IsNurse:
+					ProcessNurse(curEvent);
+					break;
+					
+					case EventType.IsDoctor:
+					ProcessDoctor(curEvent);
+					break;
+				}
+				
+				CountMaxQ();
+			}
+			
+			simTime = eventArr[0].etime;
+			pRefuse = CountPRefuse();
+		}
+		
+		private void ProcessClient(Event e)
+		{
+			if (e.etype is EventType.IsClient1)
+			{
+				if (qArr[0].Count >= _maxQueue)
+				{
+					refused += 1;
+					eventArr.Add(new Event(e.etype, clientArr[e.ind].Next(e.etime), e.ind));
+					return;
+				}
+			}
+			
+			if (e.etype is EventType.IsClient1)
+			{
+				if (opr.IsFree())
+					eventArr.Add(new Event(EventType.IsOperator, e.etime));
+				
+				qArr[0].Enqueue(e.etime);
+			}
+			else
+			{
+				if (nrsArr[2].IsFree())
+					eventArr.Add(new Event(EventType.IsNurse, e.etime, 2));
+				
+				qArr[1].Enqueue(e.etime);
+			}
+			
+			eventArr.Add(new Event(e.etype, clientArr[e.ind].Next(e.etime), e.ind));
+		}
+		
+		private void ProcessOperator(Event e)
+		{
+			double tempValue;
+			
+			if (!opr.IsFree())
+			{
+				opr.AddToQueue(e.etime);
+				
+				if (nrsArr[0].IsFree())
+					eventArr.Add(new Event(EventType.IsNurse, e.etime, 0));
+				else if (nrsArr[1].IsFree())
+					eventArr.Add(new Event(EventType.IsNurse, e.etime, 1));
+			}
+			
+			tempValue = opr.GetFromQueue();
+			if (tempValue > 0)
+			{
+				opr.SetBusy();
+				eventArr.Add(new Event(EventType.IsOperator, opr.Next(e.etime)));
+			}
+			else
+				opr.SetFree();
+		}
+		
+		private void ProcessNurse(Event e)
+		{
+			double tempValue;
+			
+			if (!nrsArr[e.ind].IsFree())
+			{
+				nrsArr[e.ind].AddToQueue(e.etime);
+				
+				if (dctArr[0].IsFree())
+					eventArr.Add(new Event(EventType.IsDoctor, e.etime, 0));
+				else if (dctArr[1].IsFree())
+					eventArr.Add(new Event(EventType.IsDoctor, e.etime, 1));
+			}
+			
+			tempValue = nrsArr[e.ind].GetFromQueue();
+			if (tempValue > 0)
+			{
+				nrsArr[e.ind].SetBusy();
+				eventArr.Add(new Event(EventType.IsNurse, nrsArr[e.ind].Next(e.etime), e.ind));
+			}
+			else
+				nrsArr[e.ind].SetFree();
+		}
+		
+		private void ProcessDoctor(Event e)
+		{
+			double tempValue;
+			
+			if (!dctArr[e.ind].IsFree())
+			{
+				processed += 1;
+				dctArr[e.ind].SetFree();
+			}
+			
+			tempValue = dctArr[e.ind].GetFromQueue();
+			if (tempValue > 0)
+			{
+				dctArr[e.ind].SetBusy();
+				eventArr.Add(new Event(EventType.IsDoctor, dctArr[e.ind].Next(e.etime), e.ind));
+			}
+		}
+		
+		private double CountPRefuse(){ return (double)refused / (refused + processed); }
+		
+		private void CountMaxQ()
+		{
+			for (int i = 0; i < qArr.Count(); i++)
+				if (qArr[i].Count() > maxSizeQ[i])
+					maxSizeQ[i] = qArr[i].Count();
+		}
+	}
+}
+
+
+\end{lstlisting}
